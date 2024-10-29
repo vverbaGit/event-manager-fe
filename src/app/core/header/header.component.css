@@ -1,0 +1,38 @@
+.toolbar {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  width: 100%;
+  background: #D9D9D9;
+  padding-left: 10px;
+  padding-right: 0;
+}
+
+.logo {
+  display: inline-flex;
+  margin-left: 15px;
+  transform: scale(2);
+}
+
+.button-container {
+  height: 100%;
+}
+
+.toolbar-text {
+  color: #023047 !important;
+  font-family: Impact, serif;
+  font-size: 25px;
+}
+
+.toolbar-button {
+  height: 100%;
+  border-radius: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.button-active {
+  background-color: #FB8500;
+}

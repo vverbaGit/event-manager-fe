@@ -1,0 +1,31 @@
+.button-active {
+  background-color: #FB8500;
+}
+
+.button-start {
+  width: 150px;
+}
+
+.button-text {
+  color: #023047 !important;
+  font-family: Impact, serif;
+  font-size: 25px;
+}
+
+.home-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.stepper {
+  background: none;
+}
+
+.type-buttons-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.type-button {
+  border-radius: 10px;
+}
