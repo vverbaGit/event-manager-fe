@@ -8,7 +8,7 @@ import {environment} from '../../../environments/environment';
   providedIn: 'root'
 })
 export class HolidayClientService {
-  private apiUrl = environment + '/api/events';
+  private apiUrl = environment.apiUrl + '/api/events';
 
   constructor(private http: HttpClient) {
   }

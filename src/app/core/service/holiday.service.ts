@@ -21,7 +21,7 @@ export class HolidayService {
 
   save(body: HolidayEvent): Observable<HolidayEvent> {
     console.log(body);
-    return this.client.save(body);
+    return this.holidayClientService.save(body);
   }
 
   getServices(): Observable<string[]> {

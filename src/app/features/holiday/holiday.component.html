@@ -1,13 +1,21 @@
 <div class="home-container">
-  <div></div>
+  <div class="sidebar">
+    <h2>Для початку давай оберемо тип свята, який ти хочеш організувати</h2>
+    <img src="path/to/character.png" alt="Character" class="character"/>
+  </div>
   <div>
     <mat-stepper class="stepper" #stepper>
       <mat-step [stepControl]="formGroup">
         <form [formGroup]="formGroup" class="type-buttons-container">
-          <div *ngFor="let type of holidayTypes">
-            <button (click)="setType(type)"
-                    mat-button matStepperNext class="type-button">{{ type }}
-            </button>
+          <div>
+            <mat-grid-list cols="3" rowHeight="2:1" class="button-container">
+              <mat-grid-tile *ngFor="let type of holidayTypes" class="button-grid">
+                <div (click)="setType(type)" class="image-container">
+                  <img ngSrc="{{getTypeImage(type)}}" height="140" width="250" alt="{{getTypeName(type)}}"/>
+                  <div class="centered-text">{{ getTypeName(type) }}</div>
+                </div>
+              </mat-grid-tile>
+            </mat-grid-list>
           </div>
         </form>
       </mat-step>
