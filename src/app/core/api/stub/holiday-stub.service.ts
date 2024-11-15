@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpErrorResponse} from '@angular/common/http';
 import {Observable, of, throwError} from 'rxjs';
-import {HolidayEvent} from '../../models/holiday-event';
+import {HolidayEvent, HolidayEventGuest, HolidayEventOption} from '../../models/holiday-event';
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +12,17 @@ export class HolidayStubService {
     return of();
   }
 
-  getServices(): Observable<string[]> {
-    return of(['Торт', 'Їжа', 'Заклад', 'Аксесуари', 'Дрес-код', 'Наряд/Костюм',
-      'Коктейлі', 'Конкурси', 'Декорації', 'Музика', 'Запрошення', 'Зачіска']);
+  getOptions(): Observable<HolidayEventOption[]> {
+    let options = ['Торт', 'Їжа', 'Заклад', 'Аксесуари', 'Дрес-код', 'Наряд/Костюм',
+      'Коктейлі', 'Конкурси', 'Декорації', 'Музика', 'Запрошення', 'Зачіска']
+      .map(option => ({name: option} as HolidayEventOption));
+    return of(options);
+  }
+
+  getGuests(): Observable<HolidayEventGuest[]> {
+    let guests = ['Настя', 'Влад', 'Марс', 'Роксі']
+      .map(option => ({name: option} as HolidayEventOption));
+    return of(guests);
   }
 
   private handleError(error: HttpErrorResponse) {

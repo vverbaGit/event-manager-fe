@@ -15,7 +15,8 @@
 .home-container {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  height: 70%;
+  height: 93%;
+  width: 100%;
 }
 
 .stepper {
@@ -79,4 +80,11 @@
   align-items: center;
   text-align: center;
   font-size: 1.5rem;
+}
+
+.style-error {
+  color: red !important;
+}
+.style-error .mat-simple-snackbar-action {
+  color: red !important;
 }

@@ -8,10 +8,10 @@ export enum HolidayType {
 }
 
 export const HolidayTypeMetadata: Record<string, { image: string; name: string }> = {
-  [HolidayType.BIRTHDAY]: {image: 'assets/images/event-types/birthday.png', name: 'День народження'},
-  [HolidayType.WEDDING]: {image: 'assets/images/event-types/wedding.png', name: 'Весілля'},
-  [HolidayType.NEW_YEAR]: {image: 'assets/images/event-types/new-year.png', name: 'Новий рік'},
-  [HolidayType.HALLOWEEN]: {image: 'assets/images/event-types/halloween.png', name: 'Гелоуін'},
-  [HolidayType.EASTER]: {image: 'assets/images/event-types/easter.png', name: 'Великдень'},
+  [HolidayType.BIRTHDAY]: {image: 'assets/images/event-types/birthday.jpg', name: 'День народження'},
+  [HolidayType.WEDDING]: {image: 'assets/images/event-types/wedding.jpg', name: 'Весілля'},
+  [HolidayType.NEW_YEAR]: {image: 'assets/images/event-types/new-year.jpg', name: 'Новий рік'},
+  [HolidayType.HALLOWEEN]: {image: 'assets/images/event-types/halloween.jpg', name: 'Гелоуін'},
+  [HolidayType.EASTER]: {image: 'assets/images/event-types/easter.jpg', name: 'Великдень'},
   [HolidayType.CUSTOM]: {image: ' assets/images/event-types/custom.png', name: '+Щось своє'}
 };

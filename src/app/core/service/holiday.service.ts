@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
-import {HolidayEvent} from '../models/holiday-event';
+import {HolidayEvent, HolidayEventGuest, HolidayEventOption} from '../models/holiday-event';
 import {HolidayClientService} from '../api/holiday-client.service';
 import {HolidayStubService} from '../api/stub/holiday-stub.service';
 
@@ -24,7 +24,11 @@ export class HolidayService {
     return this.holidayClientService.save(body);
   }
 
-  getServices(): Observable<string[]> {
-    return this.client.getServices();
+  getOptions(): Observable<HolidayEventOption[]> {
+    return this.client.getOptions();
+  }
+
+  getGuests(): Observable<HolidayEventGuest[]> {
+    return this.client.getGuests();
   }
 }

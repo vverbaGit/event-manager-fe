@@ -21,12 +21,41 @@
       </mat-step>
       <mat-step [stepControl]="formGroup">
         <form [formGroup]="formGroup" class="type-buttons-container">
-          <mat-selection-list [multiple]="true" formControlName="services">
-            <div *ngFor="let service of services$ | async">
-              <mat-list-option [value]="service">{{ service }}</mat-list-option>
-            </div>
-          </mat-selection-list>
-          <button (click)="logForm()" mat-button matStepperNext>Далі</button>
+          <mat-form-field>
+            <mat-label>Оберіть дату</mat-label>
+            <input formControlName="date" matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matIconSuffix [for]="picker">
+              <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </form>
+        <button (click)="saveState()" mat-button matStepperNext>Далі</button>
+      </mat-step>
+      <mat-step [stepControl]="formGroup">
+        <form [formGroup]="formGroup" class="type-buttons-container">
+          <mat-form-field>
+            <mat-label>Опції</mat-label>
+            <mat-select formControlName="options" multiple>
+              @for (option of options$ | async; track option) {
+                <mat-option [value]="option">{{option.name}}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+          <button (click)="saveState()" mat-button matStepperNext>Далі</button>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="formGroup">
+        <form [formGroup]="formGroup" class="type-buttons-container">
+          <mat-form-field>
+            <mat-label>Гості</mat-label>
+            <mat-select formControlName="guests" multiple>
+              @for (guest of guests$ | async; track guest) {
+                <mat-option [value]="guest">{{guest.name}}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+          <button (click)="saveState()" mat-button matStepperNext>Далі</button>
         </form>
       </mat-step>
       <mat-step [stepControl]="formGroup">
